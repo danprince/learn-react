@@ -1,6 +1,7 @@
 # Exercise 5
 _Component State_.
----
+
+===
 
 ## State vs Props
 Components have two associated bits of data. The first is props, which you've already seen. Props are passed down from the parent and you can't change them inside our component. They should be considered immutable.

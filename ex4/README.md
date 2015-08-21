@@ -1,6 +1,7 @@
 # Exercise 4
 _JSX_
----
+
+===
 
 ## A Lot of Typing
 Hopefully you will have already noticed that you end up typing `React.createElement` a lot. It's difficult to read large components back, as the different arguments all blend together visually and you end up with huge amounts of code to represent fairly simple things.

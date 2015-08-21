@@ -1,6 +1,7 @@
 # Exercise 3
 _Nested Components_
----
+
+===
 
 ## Components made of Components
 Components don't have to be made of just HTML, they can be made of other React components too. Lets take the clock we made last time and update it so that if it's the afternoon, we render an afternoon component, and likewise for the morning.

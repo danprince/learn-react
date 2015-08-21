@@ -1,6 +1,7 @@
 # Exercise 2
 _Exploring components_
----
+
+===
 
 ## Components Properties
 So far, you're probably thinking that this seems like a very long winded way to get a `<h1>` tag into a HTML document. You're right, it is.

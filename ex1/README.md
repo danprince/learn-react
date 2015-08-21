@@ -1,6 +1,7 @@
 # Exercise 1
 _Using React from a CDN_.
----
+
+===
 
 ## Setup
 Open up the `index.html` file for this exercise and add the following script tags to the body.
