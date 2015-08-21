@@ -25,8 +25,6 @@ However, we still have to keep track of the different arguments and our brains a
 > JSX is the hero Javascript deserves, but not the one it needs right now. So we'll hunt it. Because it can take it. Because it's not our hero. It's a syntactic guardian, a watchful protector, a dark knight.
 
 ```js
-var component = React.createElement;
-
 var Clock = React.createClass({
   render: function() {
     return (
