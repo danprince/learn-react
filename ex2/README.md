@@ -1,14 +1,12 @@
 # Exercise 2
 _Exploring components_
 
-===
-
 ## Components Properties
 So far, you're probably thinking that this seems like a very long winded way to get a `<h1>` tag into a HTML document. You're right, it is.
 
 The next thing we want to learn about components is that they have properties. HTML elements have attributes (e.g. `<input type='text' />`), functions have arguments (e.g. `Math.sqrt(49)`) and React components have properties:
 
-```
+```js
 React.createElement(Greeting, { name: 'world' });
 ```
 
@@ -20,7 +18,7 @@ This won't change anything, if you refresh your page, because you haven't told y
 
 Update your component's render method to look like this instead:
 
-```
+```js
 return (
   React.createElement('h1', null, this.props.name);
 );
@@ -32,7 +30,7 @@ Now instead of rendering `'Hello, world!'` the component will render whatever we
 
 Each component has a render method, which must return either another component, or some HTML. All we need is a `<h1>` tag with our greeting inside. Add the following code to the `render` function.
 
-```
+```js
 return (
   React.createElement('h1', null, 'Hello, world!');
 );
@@ -43,7 +41,7 @@ We can use the properties for all sorts of things. Lets make a simple clock that
 
 Add this starting code to your file, above the call to `React.render`.
 
-```
+```js
 var Clock = React.createClass({
   render: function() {
     var time = this.props.hour < 12 ? 'Morning' : 'Afternoon';
@@ -64,7 +62,7 @@ We also moved some of our code out of the return statement. This is completely f
 
 Hopefully you can see what's going to happen here. We'll need to change our code, so that we render the Clock component rather than the Greeting component.
 
-```
+```js
 var hour = (new Date).getHours();
 
 React.render(

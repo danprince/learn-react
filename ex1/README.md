@@ -1,12 +1,10 @@
 # Exercise 1
 _Using React from a CDN_.
 
-===
-
 ## Setup
 Open up the `index.html` file for this exercise and add the following script tags to the body.
 
-```
+```html
 <script src='https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js'></script>
 ```
 
@@ -14,14 +12,14 @@ Just like most libraries, we can use React from a CDN. Adding this script tag wi
 
 Once React is in and you can see that it loads, create a file called `app.js` and add it below the React script tag.
 
-```
+```html
 <script src='app.js'></script>
 ```
 
 ## Hello, World
 Open your `app.js` file and add the following code.
 
-```
+```js
 var Greeting = React.createClass({
   render: function() {
 
@@ -33,7 +31,7 @@ When writing React, you define _components_, which you can create with the `Reac
 
 Each component has a render method, which must return either another component, or some HTML. All we need is a `<h1>` tag with our greeting inside. Add the following code to the `render` function.
 
-```
+```js
 return (
   React.createElement('h1', null, 'Hello, world!');
 );
@@ -43,7 +41,7 @@ We use the `React.createElement` method to describe HTML within our Javascript f
 
 Once we've defined a React component, we actually have to use it somewhere if we want it to show up. Below your greeting component, add the following code.
 
-```
+```js
 window.addEventListener('load', function() {
   React.render(
     React.createElement(Greeting, null),

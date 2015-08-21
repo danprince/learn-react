@@ -1,8 +1,6 @@
 # Exercise 5
 _Component State_.
 
-===
-
 ## State vs Props
 Components have two associated bits of data. The first is props, which you've already seen. Props are passed down from the parent and you can't change them inside our component. They should be considered immutable.
 
@@ -10,7 +8,7 @@ The other important bit of data our components know about it their own state. Un
 
 Let's design a new component. It will be a timer that counts up from 0 in seconds and resets when you click it. Now we could pass the time in as a property from outside the timer, but it makes a lot more sense for the timer to manage that itself.
 
-```
+```js
 var Timer = React.createClass({
   render: function() {
     return (
@@ -26,7 +24,7 @@ React gives us a number of other methods, other than render, that will all be ca
 
 Let's add the `getIntitialState` method to our timer component.
 
-```
+```js
 var Timer = React.createClass({
   getInitialState: function() {
     return {
@@ -45,7 +43,7 @@ This method simply returns what `this.state` should be set to when we render the
 
 Next we want to use `setInterval` to update the `this.state.time` each second. We only want to start updating our state when we know our component has successfully ended up in the DOM. React lets us know when this has happened by telling us that our component _mounted_. Time to add another method to our component.
 
-```
+```js
 var Timer = React.createClass({
   getInitialState: function() {
     return {
@@ -67,7 +65,7 @@ var Timer = React.createClass({
 
 Now we're starting to get something that looks and feels like a proper component. It's important to notice that we didn't do
 
-```
+```js
 setInterval(function() {
   this.state.time += 1;
 }, 1000);
@@ -81,7 +79,7 @@ Finally, we want to reset the timer if the button is clicked. This basically inv
 
 React lets us define our own custom methods for our components. Let's create one called `resetTimer`.
 
-```
+```js
 var Timer = React.createClass({
   resetTimer: function() {
     this.setState({ time: 0 });
@@ -106,7 +104,7 @@ var Timer = React.createClass({
 
 Finally, we need to make sure it actually gets called. We can add event listeners to our React components in a similar way we can with HTML elements.
 
-```
+```js
 return (
   <button onClick={this.resetTimer}>{this.state.time} s</button>
 );
