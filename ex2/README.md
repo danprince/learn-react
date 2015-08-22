@@ -28,14 +28,6 @@ We access the properties of our component with `this.props`. As you can see, we 
 
 Now instead of rendering `'Hello, world!'` the component will render whatever we pass as a `name` property.
 
-Each component has a render method, which must return either another component, or some HTML. All we need is a `<h1>` tag with our greeting inside. Add the following code to the `render` function.
-
-```js
-return (
-  React.createElement('h1', null, 'Hello, world!')
-);
-```
-
 ## Conditional Components
 We can use the properties for all sorts of things. Lets make a simple clock that told you whether it before or after midday.
 
