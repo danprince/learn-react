@@ -20,7 +20,7 @@ Update your component's render method to look like this instead:
 
 ```js
 return (
-  React.createElement('h1', null, this.props.name);
+  React.createElement('h1', null, this.props.name)
 );
 ```
 
@@ -32,7 +32,7 @@ Each component has a render method, which must return either another component, 
 
 ```js
 return (
-  React.createElement('h1', null, 'Hello, world!');
+  React.createElement('h1', null, 'Hello, world!')
 );
 ```
 
@@ -46,7 +46,7 @@ var Clock = React.createClass({
   render: function() {
     var time = this.props.hour < 12 ? 'Morning' : 'Afternoon';
     return (
-      React.createElement('h1', null, time);
+      React.createElement('h1', null, time)
     );
   }
 });
