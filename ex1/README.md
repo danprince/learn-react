@@ -33,7 +33,7 @@ Each component has a render method, which must return either another component, 
 
 ```js
 return (
-  React.createElement('h1', null, 'Hello, world!');
+  React.createElement('h1', null, 'Hello, world!')
 );
 ```
 
