@@ -4,11 +4,7 @@ layout: page
 category: lesson
 ---
 
-# Exercise 3
-_Nested Components_
-
-## Components made of Components
-Components don't have to be made of just HTML, they can be made of other React components too. Lets take the clock we made last time and update it so that if it's the afternoon, we render an afternoon component, and likewise for the morning.
+Components don't have to be made of just HTML, they can be made of other React components too. Lets take the clock we made last time and update it so that if it's the afternoon, we render an afternoon component, otherwise, we'll render a morning component.
 
 We'll need two new components.
 
@@ -42,7 +38,7 @@ var Clock = React.createClass({
 });
 {% endhighlight %}
 
-Notice that we used the `className` property on our `<h1>` tags this time. This is React's way of saying, give this element this CSS class. We can create a stylesheet and add the following rules to make our components look better.
+Notice that we used the `className` property on our `<h1>` tags this time. This is React's way of saying, give this element this CSS class. We can create a stylesheet and add the following rules to make our components look better (well different).
 
 {% highlight css %}
 .morning {
@@ -54,5 +50,5 @@ Notice that we used the `className` property on our `<h1>` tags this time. This 
 }
 {% endhighlight %}
 
-[Time for the next step.](./ex4.html)
+All looking good? [Time for the next step.](./ex4.html)
 

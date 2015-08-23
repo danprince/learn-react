@@ -7,7 +7,7 @@ category: lesson
 ## A Lot of Typing
 Hopefully you will have already noticed that you end up typing `React.createElement` a lot. It's difficult to read large components back, as the different arguments all blend together visually and you end up with huge amounts of code to represent fairly simple things.
 
-There are a few ways to alleviate this pain. The first is to alias `React.createElement`.
+There are a few ways to alleviate this pain. We could alias `React.createElement`?
 
 {% highlight javascript %}
 var component = React.createElement;
@@ -24,8 +24,6 @@ var Clock = React.createClass({
 However, we still have to keep track of the different arguments and our brains are probably used to reading this kind of structured data as HTML not as Javascript. Enter the second solution, JSX.
 
 ## JSX
-
-> JSX is the hero Javascript deserves, but not the one it needs right now. So we'll hunt it. Because it can take it. Because it's not our hero. It's a syntactic guardian, a watchful protector, a dark knight.
 
 {% highlight javascript %}
 var Clock = React.createClass({
@@ -53,11 +51,19 @@ React.createElement(Clock, { hour: hour });
 
 Instead of writing `React.createElement`, we write it _as an element_. Instead of passing properties in as an argument, we pass them in as attributes.
 
+> JSX is the hero Javascript deserves, but not the one it needs right now. So we'll hunt it. Because it can take it. Because it's not our hero. It's a syntactic guardian, a watchful protector, a dark knight.
+
+Not everyone is keen on JSX. A lot of developers learnt the hard way that they needed to separate their logic (JS) from their view (HTML). Separation of concerns is an important thing, but modularity is more important for writing reusable code.
+
+However, if you don't like JSX, you can of course carry on writing React without it, as we started out. Or see what it looks like to write React without JSX in languages such as [Coffeescript][1], [Clojurescript][3] and [Livescript][2].
+
+## Into the Browser
+
 This is all well and good, except the browser doesn't understand JSX. Fail.
 
-But it's ok, because not only have Facebook built React, but they also built a Javascript library, which can turn JSX into Javascript, _inside the browser!_.
+But it's ok, because the people who built React also built a Javascript library, which can turn JSX into Javascript, _inside the browser!_
 
-Time to hit the CDN for some more goodness.
+Time to hit the CDN for some more goodness, in the form of the JSXTransformer. Add this script tag above your `app.js` script.
 
 {% highlight html %}
 <script src='https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js'></script>
@@ -71,7 +77,10 @@ However, even with the transformer loaded, our script files will throw syntax er
 
 Remember, we only need to add the type attribute to scripts that contain JSX rather than regular Javascript. Try converting all of your calls to `React.createElement` to JSX instead.
 
-Then, it's time for the next step.
+Make sure that your components still work in the same way.
 
-[Time for the next step.](./ex5.html)
+Then, it's [time for the next step.](./ex5.html)
 
+[1]: http://blog.vjeux.com/2013/javascript/react-coffeescript.html "React in Coffeescript"
+[2]: http://red-badger.com/blog/2014/05/27/using-livescript-with-react/ "React in Livescript"
+[3]: https://reagent-project.github.io/ "React in Clojurescript"
