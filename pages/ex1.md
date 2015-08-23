@@ -4,6 +4,8 @@ layout: page
 category: lesson
 ---
 
+We're going to start with the absolute minimum environment for developing React applications.
+
 ## Setup
 Open up the `index.html` file for this exercise and add the following script tags to the body.
 

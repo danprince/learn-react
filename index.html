@@ -3,13 +3,56 @@ layout: default
 ---
 
 <div class="home">
+  <h2>What is this?</h2>
   <p>
     A set of lessons aimed at web developers who are interested in
     React, but don't know where to get started.
   </p>
+  <p>
+    The React ecosystem can be a bit scary for new developers:
+  </p>
+  <p>
+    <blockquote>
+      Use <a href='http://facebook.github.io/react/'>React</a>, but not without
+      <a href='http://facebook.github.io/flux/'>Flux</a>. But don't use Flux,
+      use <a hfef='https://github.com/rackt/redux'>Redux</a>. Whilst
+      you're at it, you'll want <a href='https://facebook.github.io/jsx/'>JSX</a>,
+      but don't use JSX, use <a href='http://babeljs.io/'>Babel</a>. You'll
+      probably want to tie this all together with
+      <a href='http://gulpjs.com/'>Gulp</a>, but not without
+      <a href='http://webpack.github.io/'>Webpack</a>.
+      If you've got webpack in there, it'd be mad to not use the
+      <a href='http://webpack.github.io/docs/webpack-dev-server.html'>Webpack Dev
+      Server</a> and get the benefits of <a href='https://github.com/gaearon/react-hot-loader'>Hot Reloading</a>!
+    </blockquote>
+  </p>
+  <p>
+    These are all great things! And in time, you'll probably try them all.
+    But you don't need to know any of this stuff to learn React.
+  </p>
 
-  <h3>Lessons</h3>
-  <ol>
+  <h2>Ok, so what is React?</h2>
+  <p>
+    React is Javascript library that helps developers make applications out of
+    components. <strong>That's it</strong>. If you can imagine an application
+    made of components, then you can build it with React.
+  </p>
+  <p>
+    Thought there was going to be more? Sorry to disappoint.
+  </p>
+
+  <h2>Ok, so what is React?</h2>
+  <p>
+    React is Javascript library that helps developers make applications out of
+    components. <strong>That's it</strong>. If you can imagine an application
+    made of components, then you can build it with React.
+  </p>
+  <p>
+    Thought there was going to be more? Sorry to disappoint.
+  </p>
+
+  <h2>Lessons</h2>
+  <ol class='lessons'>
     {% for page in site.pages %}
       {% if page.category == 'lesson' %}
       <li class='item'>

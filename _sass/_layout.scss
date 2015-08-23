@@ -1,3 +1,10 @@
+.lessons a:visited {
+  color: #aaa;
+  text-decoration: line-through;
+  border-bottom: solid 1px #aaa;
+  border: solid 1px #eee;
+}
+
 .site-header {
   text-align: center;
   background: #222;
