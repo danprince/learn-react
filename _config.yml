@@ -6,6 +6,7 @@ baseurl: "/learn-react" # the subpath of your site, e.g. /blog/
 url: "http://danprince.github.io" # the base hostname & protocol for your site
 twitter_username: workshydev
 github_username:  danprince
+highlighter: pygments
 #highlighter: off
 
 # Build settings
