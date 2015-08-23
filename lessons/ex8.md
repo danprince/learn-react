@@ -51,6 +51,10 @@ React.render(
 );
 {% endhighlight %}
 
+You should see something that looks like this.
+
+![Avatar](http://api.adorable.io/avatars/100/Test)
+
 ## Looping in React
 Rather than render one avatar with a hardcoded name, let's render a whole list of names.
 
