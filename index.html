@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div class="home">
+  <p>
+    A set of lessons aimed at web developers who are interested in
+    React, but don't know where to get started.
+  </p>
+
+  <h3>Lessons</h3>
+  <ol>
+    {% for page in site.pages %}
+      {% if page.category == 'lesson' %}
+      <li class='item'>
+        <strong>
+          <a href='{{page.url}}'>{{ page.title }}</a>
+        </strong>
+      </li>
+      {% endif %}
+    {% endfor %}
+  </ol>
+</div>
