@@ -4,20 +4,44 @@ layout: page
 category: lesson
 ---
 
-## Components Properties
 So far, you're probably thinking that this seems like a very long winded way to get a `<h1>` tag into a HTML document. You're right, it is.
 
-The next thing we want to learn about components is that they have properties. HTML elements have attributes (e.g. `<input type='text' />`), functions have arguments (e.g. `Math.sqrt(49)`) and React components have properties:
+The next thing we want to learn about components is that they have properties.
+
+Just like HTML elements have attributes
+
+{% highlight html %}
+<input type='text' placeholder='Enter test' required='true'/>
+{% endhighlight %}
+
+Functions have arguments
+
+{% highlight javascript %}
+Math.pow(4, 2);
+{% endhighlight %}
+
+And React components have properties:
 
 {% highlight javascript %}
 React.createElement(Greeting, { name: 'world' });
 {% endhighlight %}
 
-The second argument to `React.createElement` is always the properties for the component. In this case we are passing a `name` property and it has the value `'world'`.
+We can pass properties to a React component to change the way the component works. Just like we can pass attributes to a HTML element, or pass arguments to a function to change the value it returns.
 
-Update your call to `React.render` so that it looks like that.
+## Passing Properties
 
-This won't change anything, if you refresh your page, because you haven't told your component what to do with its properties.
+The second argument to `React.createElement` is always the properties for the component. In the above example we are passing a `name` property and it has the value `'world'`.
+
+Update your call to `React.render` so that it looks like this.
+
+{% highlight javascript %}
+React.render(
+  React.createElement(Greeting, { name: 'world' }),
+  document.body
+);
+{% endhighlight %}
+
+This won't change anything, if you refresh your page, because you haven't told your component what to do with its new properties.
 
 Update your component's render method to look like this instead:
 
@@ -31,8 +55,11 @@ We access the properties of our component with `this.props`. As you can see, we 
 
 Now instead of rendering `'Hello, world!'` the component will render whatever we pass as a `name` property.
 
+__It's really important to understand this step. Passing properties to
+React components will be an big focus of the rest of this tutorial.__
+
 ## Conditional Components
-We can use the properties for all sorts of things. Lets make a simple clock that told you whether it before or after midday.
+We can use the properties for all sorts of things. Lets make a simple clock that told you whether it is before or after midday.
 
 Add this starting code to your file, above the call to `React.render`.
 
@@ -47,7 +74,9 @@ var Clock = React.createClass({
 });
 {% endhighlight %}
 
-We use the ternary if statement here, to help keep things concise. If you aren't already familiar with it, here's a quick breakdown.
+_You don't need to delete or replace your `Greeting` component. We can define as many React components as we like in a file._
+
+We use the [conditional operator][1] here, to help keep things concise. If you aren't already familiar with it, here's a quick breakdown.
 
 `condition ? value_if_true : value_if_false`.
 
@@ -68,5 +97,8 @@ React.render(
 
 We use the Date class to dynamically get the current hour, then we simply pass it into the component as a property.
 
-[Time for the next step.](./ex3.html)
+Remember that our component is looking for a property called hour when we used `this.props.hour`. We have to make sure that our props object has the appropriate `hour` key.
 
+As soon as it works, it's [time for the next step.](./ex3.html)
+
+[1]: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
