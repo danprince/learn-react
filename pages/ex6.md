@@ -4,12 +4,11 @@ layout: page
 category: lesson
 ---
 
-## Customizable Components
-At the moment, our clock component uses state to store its time. We're not actually using props for anything at the moment. It turns out, props are a great way for us to configure the way our components actually work.
+At the moment, our clock component uses state to store its time. We're not actually using props for anything at the moment. It turns out, passing props is a great way for us to configure the way our components actually work.
 
-We are using a hardcoded interval of 1000ms within our setInterval call. It might be useful to be able to change this for a specific timer. Maybe we want two timers running at different speeds.
+We are using a hardcoded interval of 1000ms within our setInterval call. It might be useful to be able to change this for a specific timer. Maybe we want two timers running at different speeds?
 
-Let's add an interval prop to our timer.
+Let's add an `interval` prop to our timer.
 
 {% highlight javascript %}
 React.render(
@@ -57,5 +56,5 @@ React.render(
 
 If everything went to plan, you should see two timers, that will count at different speeds.
 
-[Time for the next step.](./ex6.html)
+Then it's [time for the next step.](./ex6.html)
 

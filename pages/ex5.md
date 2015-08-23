@@ -119,7 +119,7 @@ return (
 
 For a long time, the teaching has been that we should keep our event code free from our HTML, because it becomes difficult to work out what is calling what and where events are being fired from.
 
-However, React components force all the behaviour to be closely tied together in small, reusable components. It's always easy to find the function that a onClick handler points to, _because it also lives within the component!_.
+However, React components force all the behaviour to be closely tied together in small, reusable components. It's always easy to find the function that an `onClick` handler points to, _because it also lives within the component!_.
 
 With the event handler added, the button should count up and reset when you click it.
 
