@@ -2,7 +2,7 @@
 title: Learn React
 description: > # this means to ignore newlines until "baseurl:"
   A series of lessons that help beginners understand the basics of React.
-baseurl: "/learn-react/" # the subpath of your site, e.g. /blog/
+baseurl: "/learn-react" # the subpath of your site, e.g. /blog/
 url: "http://danprince.github.io" # the base hostname & protocol for your site
 twitter_username: workshydev
 github_username:  danprince
