@@ -73,3 +73,5 @@ Remember, we only need to add the type attribute to scripts that contain JSX rat
 
 Then, it's time for the next step.
 
+[Time for the next step.](./ex5.html)
+

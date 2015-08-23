@@ -57,5 +57,5 @@ React.render(
 
 If everything went to plan, you should see two timers, that will count at different speeds.
 
-Now, it's time for the next step.
+[Time for the next step.](./ex6.html)
 

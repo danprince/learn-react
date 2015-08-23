@@ -57,5 +57,5 @@ Remember before, that we mentioned that React can render HTML or components? Her
 
 Now open `index.html` in a browser and you should see a `<h1>` tag that says `'Hello, world!'`.
 
-Time for the next step.
+[Time for the next step.](./ex1.html)
 

@@ -56,5 +56,5 @@ Here are some components that you might make and then reuse across many projects
 * `<Captcha />`
 * `<Search />`
 
-Now, it's time for the next step.
+[Time for the next step.](./ex7.html)
 

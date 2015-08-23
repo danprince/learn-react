@@ -54,5 +54,5 @@ Notice that we used the `className` property on our `<h1>` tags this time. This 
 }
 {% endhighlight %}
 
-Time for the next step.
+[Time for the next step.](./ex4.html)
 

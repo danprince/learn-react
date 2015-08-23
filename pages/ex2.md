@@ -68,5 +68,5 @@ React.render(
 
 We use the Date class to dynamically get the current hour, then we simply pass it into the component as a property.
 
-Time for the next step.
+[Time for the next step.](./ex2.html)
 
