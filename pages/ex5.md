@@ -4,12 +4,11 @@ layout: page
 category: lesson
 ---
 
-## State vs Props
-Components have two associated bits of data. The first is props, which you've already seen. Props are passed down from the parent and you can't change them inside our component. They should be considered immutable.
+Components have two associated bits of data. The first is props, which we've already seen. Props are passed down from the parent and we can't change them inside our components.
 
-The other important bit of data our components know about it their own state. Unlike props, you can change the state of the component and each time you do, the component will be rendered again to show the changes.
+The other important bit of data our components have is _state_. Unlike props, you can change the state of the component and each time you do, the component will be rendered again to show the changes.
 
-Let's design a new component. It will be a timer that counts up from 0 in seconds and resets when you click it. Now we could pass the time in as a property from outside the timer, but it makes a lot more sense for the timer to manage that itself.
+Let's design a new component. We'll make a timer that counts up from 0 in seconds and resets to 0 it is clicked. We could manage time somewhere else and re-render the component with new props, every second. Or we could let the component manage itself, which makes a lot more sense.
 
 {% highlight javascript %}
 var Timer = React.createClass({
@@ -21,9 +20,10 @@ var Timer = React.createClass({
 });
 {% endhighlight %}
 
-As you can see, when we are telling a component how it should render, we use `state` in a very similar way to `props`. Now that we've told our timer how to render, we need to tell it how to behave. Somewhere we need to update the state once a second.
+As you can see, when we are telling a component how it should render, we use `state` in a very similar way to `props`. Now that we've told our timer how to render, now we need to tell it how to behave. Somewhere we need to update the state once a second.
 
-React gives us a number of other methods, other than render, that will all be called when certain things happen. We are interested in two of them: `getInitialState` and `componentDidMount`. Don't worry about the slight weird names. They will make sense eventually.
+## Lifecycle Hooks
+React gives us a number of other methods, other than render, that will all be called at certain times in a components life. For now, we are only interested in two of them: `getInitialState` and `componentDidMount`. Don't worry about the slightly weird names, they'll make sense eventually.
 
 Let's add the `getIntitialState` method to our timer component.
 
@@ -42,9 +42,11 @@ var Timer = React.createClass({
 });
 {% endhighlight %}
 
-This method simply returns what `this.state` should be set to when we render the component for the first time. Our timer is going to count up from 0, so setting `this.state.time` to `0` is what we want to do here. Fairly straightforward.
+This method simply returns whatever `this.state` should be set to when we render the component for the first time. Our timer is going to count up from 0, so setting `this.state.time` to `0` is what we want to do here. Fairly straightforward.
 
-Next we want to use `setInterval` to update the `this.state.time` each second. We only want to start updating our state when we know our component has successfully ended up in the DOM. React lets us know when this has happened by telling us that our component _mounted_. Time to add another method to our component.
+Next we want to use `setInterval` to update the `this.state.time` each second. We only want to start updating our state when we know our component has successfully ended up in the DOM. React lets us know when this has happened by calling the `componentDidMount` method.
+
+Add the following `componentDidMount` method to the Timer component.
 
 {% highlight javascript %}
 var Timer = React.createClass({
@@ -66,6 +68,8 @@ var Timer = React.createClass({
 });
 {% endhighlight %}
 
+_Don't worry about the `.bind(this)`, that's a quirk of [the way `setInterval` handles this][1], not something that's related to React._
+
 Now we're starting to get something that looks and feels like a proper component. It's important to notice that we didn't do
 
 {% highlight javascript %}
@@ -74,11 +78,11 @@ setInterval(function() {
 }, 1000);
 {% endhighlight %}
 
-It's __essential__ that we call `this.setState` because that lets React know that we are changing the state and it needs to re-render.
+__It's essential that we call `this.setState` because that lets React know that it needs to re-render the component.__
 
 Open the app in the browser and you should see the time counting up.
 
-Finally, we want to reset the timer if the button is clicked. This basically involves setting `this.state.time` back to 0 and we need it to happen whenever the button is clicked.
+Finally, we want to reset the timer if the button is clicked. This involves setting `this.state.time` back to 0 and we need it to happen whenever the button is clicked.
 
 React lets us define our own custom methods for our components. Let's create one called `resetTimer`.
 
@@ -105,7 +109,7 @@ var Timer = React.createClass({
 });
 {% endhighlight %}
 
-Finally, we need to make sure it actually gets called. We can add event listeners to our React components in a similar way we can with HTML elements.
+Finally, we need to make sure it actually gets called. We can add event listeners to our React components in a similar way to inline HTML elements event listeners.
 
 {% highlight javascript %}
 return (
@@ -119,5 +123,6 @@ However, React components force all the behaviour to be closely tied together in
 
 With the event handler added, the button should count up and reset when you click it.
 
-Now, it's time for the next step.
+Make sure it works, then [it's time for the next step.](ex6).
 
+[1]: http://stackoverflow.com/questions/2749244/javascript-setinterval-and-this-solution Stack Overflow setInterval

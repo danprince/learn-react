@@ -4,7 +4,6 @@ layout: page
 category: lesson
 ---
 
-## A Lot of Typing
 Hopefully you will have already noticed that you end up typing `React.createElement` a lot. It's difficult to read large components back, as the different arguments all blend together visually and you end up with huge amounts of code to represent fairly simple things.
 
 There are a few ways to alleviate this pain. We could alias `React.createElement`?
