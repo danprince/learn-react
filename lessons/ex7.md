@@ -4,7 +4,6 @@ layout: page
 category: lesson
 ---
 
-## Structure
 It's not particularly nice to have to create an element with an id, then get it with `getElementById` before you can render a React component on the page. Thankfully, you can almost certainly compose your components together, and render them in one container.
 
 Let's revisit the multiple timers example. Clear the extra elements you added to the HTML and create a new component called `App`.
