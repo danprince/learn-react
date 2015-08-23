@@ -7,7 +7,7 @@ category: lesson
 We're going to start with the absolute minimum environment for developing React applications.
 
 ## Setup
-Create an [`index.html`][1] file to use (_or use use [ours][1]_) for this exercise and add the following script tags.
+Create an [`index.html`][1] file to use (_or use [a readymade one][1]_) for this exercise and add the following script tags.
 
 {% highlight html %}
 <script src='https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js'></script>
@@ -56,6 +56,8 @@ window.addEventListener('load', function() {
 {% endhighlight %}
 
 Remember before, that we mentioned that React can render HTML or components? Here is us using a component rather than a tag name. We also have to tell React where to render that component to. In this case, we want it to be rendered directly to the body.
+
+Notice that we wrote `Greeting` not `'Greeting'`. There's a very good reason for this. React doesn't know about any HTML tags called `<Greeting>`. Since we wrote `var Greeting = React.createClass(...)` our component lives inside a variable called `Greeting`. All we need to do is pass this variable to `React.render`.
 
 Now open `index.html` in a browser and you should see a `<h1>` tag that says `'Hello, world!'`.
 
