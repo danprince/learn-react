@@ -32,7 +32,7 @@ var Greeting = React.createClass({
 });
 {% endhighlight %}
 
-When writing React, you define _components_, which you create with the `React.createClass` method. Here you're going to write a simple component which renders a greeting to the screen.
+When writing React, you define _components_, which you create with the [`React.createClass`][2] method. Here you're going to write a simple component which renders a greeting to the screen.
 
 Each component has a render method, which must return either another component, or some HTML. We need is a `<h1>` tag with our greeting inside. Add the following code to the `render` function.
 
@@ -57,10 +57,12 @@ window.addEventListener('load', function() {
 
 Remember before, that we mentioned that React can render HTML or components? Here is us using a component rather than a tag name. We also have to tell React where to render that component to. In this case, we want it to be rendered directly to the body.
 
-Notice that we wrote `Greeting` not `'Greeting'`. There's a very good reason for this. React doesn't know about any HTML tags called `<Greeting>`. Since we wrote `var Greeting = React.createClass(...)` our component lives inside a variable called `Greeting`. All we need to do is pass this variable to `React.render`.
+Notice that we wrote `Greeting` not `'Greeting'`. There's a very good reason for this, if you pass a string, then React tries to find corresponding HTML tag. We want to render a component, not a HTML tag. Earlier we declared our component with a variable called `Greeting`. All we need to do is pass this variable to [`React.render`][3].
 
 Now open `index.html` in a browser and you should see a `<h1>` tag that says `'Hello, world!'`.
 
 All working? Then it's [time for the next step.](./ex2.html)
 
 [1]: https://github.com/danprince/learn-react/blob/gh-pages/resources/index.html
+[2]: https://facebook.github.io/react/docs/top-level-api.html#react.createelement React.createElement
+[3]: https://facebook.github.io/react/docs/top-level-api.html#react.render React.render
